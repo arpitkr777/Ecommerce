@@ -1,0 +1,301 @@
+.dashboard-product-box {
+  background-color: white;
+  padding: 0 2rem;
+  overflow: auto;
+  @include square(100%);
+}
+.create-button {
+  width: 100%;
+  background-color: white;
+  @include flex(row, flex-end, center, 1rem);
+  padding: 0 2rem;
+
+  .create-product-btn {
+    @include square(2.5rem);
+    @include flex(row, center, center, 0);
+    border-radius: 50%;
+    background-color: rgb(201, 9, 9);
+    color: white;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.product-delete-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  font-size: 1.2rem;
+  @include square(2.5rem);
+  @include flex;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  align-self: flex-end;
+}
+
+.product-management {
+  @include flex(column, center, center);
+  height: 100%;
+  padding: 0 2rem;
+  > h2 {
+    @include heading(2px);
+    text-align: center;
+  }
+
+  > article {
+    height: 100%;
+    padding: 0rem rem;
+    width: 100%;
+    @include flex(row, space-between, center, 1rem);
+    background-color: white;
+    border-radius: 5px;
+
+    position: relative;
+
+    > section {
+      width: 50%;
+      height: 100%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      padding: 2rem;
+      @include flex(column, unset, unset, 1rem);
+      position: relative;
+      >img{
+        @include square(25rem);
+        align-self: center;
+        object-fit: contain;
+      }
+      > h2 {
+        @include heading(2px, 400);
+        text-align: center;
+      }
+      .transaction-product-card {
+        > img {
+          @include square(5rem);
+          object-fit: contain;
+        }
+      }
+
+      > strong {
+        font-weight: 300;
+      }
+
+      > span {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+      }
+      >div{
+        text-align: center;
+      }
+      >aside{
+        @include flex(row, center, center, 1rem);
+        >img{
+          @include square(8rem);
+          object-fit: contain;
+        }
+      }
+      > p {
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      > h3 {
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+
+    > main {
+      width: 50%;
+      @include flex(column, unset, flex-start, 0.5rem);
+      padding: 1rem;
+      height: 100%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      
+
+      > form {
+        @include flex(column, unset, flex-start, 0.5rem);
+        height: 100%;
+        width: 100%;
+        >header{
+          @include flex(row, space-between, center, 1rem);
+          width: 100%;
+          >h2{
+            @include heading(2px, 400);
+            font-size: 2rem;
+            align-self: center
+          }
+          
+        }
+        > div {
+          @include flex(column, center, flex-start, 0.5rem);
+          width: 100%;
+          
+          > input {
+            @include inputStyle(
+              100%,
+              1rem,
+              unset,
+              1px solid rgba(13, 13, 13, 0.196)
+            );
+          }
+        }
+        > aside {
+          padding: 1rem;
+          @include flex(row, center, center, 1rem);
+        
+          width: 100%;
+          > img {
+            @include square(6rem);
+            object-fit: contain;
+            justify-self: center;
+            align-self: center;
+          }
+        }
+        > button {
+          align-self: center;
+          padding: 1rem;
+          
+          border: none;
+          background-color: $color4;
+          color: white;
+          width: 50%;
+          font-size: 1rem;
+          text-align: center;
+          cursor: pointer;
+          &:hover {
+            background-color: $color2;
+            color: $color1;
+          }
+        }
+      }
+    }
+
+    > form {
+      @include flex(column, unset, center, 0.5rem);
+      width: 50%;
+      > h2 {
+        @include heading(2px, 400);
+        font-size: 2rem;
+      }
+
+      > div {
+        @include flex(column, center, flex-start, 0.5rem);
+        width: 100%;
+
+        > input {
+          @include inputStyle(
+            100%,
+            1rem,
+            unset,
+            1px solid rgba(13, 13, 13, 0.196)
+          );
+        }
+        
+      }
+     
+    
+      > p {
+        @include heading(2px, 300);
+
+        text-decoration: underline;
+      }
+      > main {
+        @include flex(row, center, center, 1rem);
+        width: 100%;
+        .upload-photo,
+        > button {
+          @include flex(row, center, stretch, 0);
+          padding: 1rem;
+          height: 100%;
+          border: none;
+          background-color: $color4;
+          color: white;
+          width: 50%;
+          font-size: 1rem;
+          text-align: center;
+          cursor: pointer;
+          &:hover {
+            background-color: $color2;
+            color: $color1;
+          }
+        }
+        > button {
+          width: 100%;
+          padding: 1.2rem 1rem;
+        }
+      }
+    }
+    > div {
+      @include flex(column, space-around, center, 1rem);
+      width: 50%;
+      height: 100%;
+
+      > div {
+        padding: 1rem;
+        @include grid(1fr 1fr, 1rem);
+        width: 100%;
+        > img {
+          @include square(15rem);
+          object-fit: contain;
+          justify-self: center;
+          align-self: center;
+        }
+      }
+    }
+  }
+
+  .shipping-info-card {
+    @include flex(column, flex-start, flex-start, 0.3rem);
+    padding: 2rem;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    > h1 {
+      text-align: center;
+      @include heading(2px, 400);
+      align-self: center;
+      font-size: 1.5rem;
+    }
+    > h5 {
+      padding-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      @include heading(2px, 300);
+    }
+
+    > .shipping-btn {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: none;
+      width: 50%;
+      background-color: $color4;
+      color: white;
+      width: 50%;
+      align-self: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $color2;
+        color: $color1;
+      }
+    }
+  }
+}
+
+.transaction-product-card {
+  @include flex(row, unset, center, 1rem);
+
+  > img {
+    @include square(4rem);
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  > span {
+    margin-left: auto;
+  }
+}

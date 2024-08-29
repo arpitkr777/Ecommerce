@@ -1,0 +1,76 @@
+.login {
+  @include flex(row, flex-end, center);
+  position: relative;
+  padding: 4rem 15%;
+  height: 90vh;
+  width: 100%;
+  > section {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: url("https://res.cloudinary.com/da9skd1ks/image/upload/v1706444003/ecommerce-assets/zq3tcqbxjdwr1kuw3cex") no-repeat center/ cover;
+  }
+
+  > main {
+    align-self: flex-start;
+    width: 100%;
+    height: 80%;
+    max-width: 20rem;
+    @include flex(column, center, flex-start, 1rem);
+
+    > h1 {
+      @include heading(0.3rem, 500);
+      text-align: center;
+    }
+    > p {
+      align-self: center;
+      margin-bottom: 1rem;
+    }
+    > div {
+      width: 100%;
+      @include flex(row, center, center);
+      >p{
+        text-align: center;
+      }
+      > input,
+      > select,>input:focus {
+        padding-top: 1rem;
+        font-size: 1rem;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $color2;
+        outline: none;
+      }
+
+      > button {
+        @include btn(1rem, $color4, $color1);
+        width: 100%;
+        font-size: 1rem;
+        border: none;
+        border-radius: 0.3rem;
+      }
+      > a {
+        text-decoration: underline;
+      }
+    }
+    > aside {
+      width: 100%;
+      @include flex(row, center, center,1rem);
+      > button {
+        @include flex(row, center, center,0.5rem);
+        >svg{
+          @include square(1.3rem);
+        }
+        @include btn(1rem, $color1, $color2);
+        width: 100%;
+        font-size: 1rem;
+        border: 0.5px solid $color2;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+}

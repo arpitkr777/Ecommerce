@@ -1,0 +1,581 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+$color1: white;
+$color2: rgb(46, 46, 46);
+$color4: rgb(219, 67, 67);
+$color5: rgba(223, 223, 223, 0.596);
+
+.red {
+  color: red;
+}
+.purple {
+  color: rgb(47, 0, 255);
+}
+.green {
+  color: rgb(0, 195, 0);
+}
+
+@import "admin-styles/mixin";
+@import "home";
+@import "cart";
+@import "shipping";
+@import "login";
+@import "search";
+@import "footer";
+@import "about";
+@import "contact";
+@import "product";
+
+@import "admin-styles/dashboard";
+@import "admin-styles/products";
+@import "admin-styles/chart";
+@import "admin-styles/dashboardapp";
+
+@import "admin-styles/admincontact";
+
+.wishlist {
+  padding: 2rem 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+.margin {
+  padding: 10rem;
+}
+
+.categories {
+  padding: 2rem 10%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  @include flex(row, flex-start, flex-start, 0.5rem);
+  flex-wrap: wrap;
+
+  > h1 {
+    @include heading(2px);
+    margin: 1rem 0;
+  }
+}
+
+.container {
+  max-width: 1367px;
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+
+  .my-orders {
+    padding: 0 10rem 10rem 10rem;
+    >main{
+      overflow-x: auto;
+    }
+    > h1 {
+      @include heading;
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    > h2 {
+      @include heading;
+      padding: 8rem;
+      text-align: center;
+    }
+  }
+}
+
+.heading {
+  @include heading(2px);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.top-bar {
+  @include flex(column, center, none, 0rem);
+
+  .offer {
+    @include flex(row, space-between, center, 1rem);
+    width: 100%;
+    background-color: #000000;
+    padding: 0.5rem 4rem;
+
+    color: white;
+    .offer-deatils {
+      @include flex(row, center, center, 1rem);
+      width: 100%;
+      text-align: center;
+    }
+    > button {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #0000009e;
+    }
+    .language {
+      @include flex(row, center, center, 0.5rem);
+
+      > select {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: rgb(255, 255, 255);
+        > option {
+          cursor: pointer;
+
+          font-size: 1.2rem;
+          color: rgb(0, 0, 0);
+
+          background: rgba(0, 0, 0, 0.04);
+
+          backdrop-filter: blur(75px);
+        }
+      }
+    }
+  }
+
+  .header {
+    @include flex(row, space-between, center, 1.2rem);
+    flex-wrap: wrap;
+    padding: 1rem 5%;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      @include flex(row, center, center, 1.2rem);
+    }
+
+    .navigation {
+      @include flex(row, center, center, 5rem);
+
+      @media screen and (max-width: 768px) {
+        gap: 1rem;
+      }
+    }
+    .search-box {
+      @include flex(row, center, center, 1rem);
+      background: #f5f5f5;
+      border-radius: 0.4rem;
+      padding: 0.5rem 1rem;
+      > span {
+        @include flex(row, center, center, 1rem);
+        font-size: 0.8rem;
+      }
+      > svg {
+        @include square(1rem);
+      }
+    }
+    a {
+      @include flex(row, center, center, 0rem);
+      color: $color2;
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+      > span {
+        color: $color4;
+      }
+      &:hover {
+        color: $color4;
+      }
+    }
+    .logo {
+      @include heading(5px, 600);
+      font-size: 2rem;
+    }
+    .account {
+      @include flex(row, center, center, 1rem);
+      height: 100%;
+      position: relative;
+
+      > a {
+        > svg {
+          @include square(1.5rem);
+          align-self: center;
+        }
+      }
+      > button {
+        border: none;
+        @include flex(row, center, flex-end, 1rem);
+        font-size: 1.2rem;
+        cursor: pointer;
+        background-color: transparent;
+        &:hover {
+          color: $color4;
+        }
+        > svg {
+          @include square(1.4rem);
+        }
+      }
+      button {
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        background-color: transparent;
+        &:hover {
+          color: $color4;
+        }
+      }
+    }
+
+    dialog {
+      border: 1px solid #ccc;
+      z-index: 99;
+      padding: 1rem;
+      @include square(8rem);
+      position: absolute;
+      left: 0rem;
+      top: 2rem;
+      > div {
+        @include flex(column, center, flex-start, 0.25rem);
+        > button {
+          @include flex(row, center, center, 0.25rem);
+          > span {
+            @include heading;
+            text-transform: capitalize;
+          }
+        }
+      }
+      > span {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+
+        > svg {
+          @include square(1.5rem);
+        }
+        &:hover {
+          color: $color4;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.not-found {
+  height: 80vh;
+  @include flex(column);
+  > svg {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 60vh;
+  }
+}
+
+.error {
+  > h1 {
+    font-size: 8rem;
+    font-weight: 600;
+  }
+
+  > p {
+    @include heading(4px, 500);
+  }
+
+  > a {
+    @include btn(1rem, $color4, $color1);
+    margin: 5rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  @media screen and (max-width: 768px) {
+    > h1 {
+      font-size: 4rem;
+      text-align: center;
+    }
+    > p {
+      text-align: center;
+      padding: 0 2rem;
+    }
+    > a {
+      margin: 2rem;
+    }
+  }
+}
+
+.checkout-container {
+  padding: 10rem 15rem;
+  width: 100%;
+  @include flex(column, center, center, 1rem);
+
+  > form {
+    @include flex(column, flext-start, stretch, 2rem);
+    padding: 2rem;
+    @include baseShadow;
+
+    > button {
+      @include btn(1rem, $color2, $color1);
+      width: 100%;
+      font-size: 1.1rem;
+
+      &:hover {
+        background-color: $color4;
+        color: $color1;
+      }
+    }
+  }
+}
+
+.admin-container {
+  @include grid(1fr 4fr, 0rem);
+  height: 100%;
+
+  > aside {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    z-index: 10;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > div {
+      margin: 2rem 1rem;
+      > h5 {
+        @include heading(2px);
+        opacity: 0.8;
+        margin: 1rem 0;
+      }
+      > ul {
+        @include flex(column, unset, unset, 0.5rem);
+        list-style: none;
+        > li {
+          padding: 0.5rem 1rem;
+
+          a {
+            color: rgba(0, 0, 0, 0.825);
+            @include flex(row, unset);
+          }
+        }
+      }
+    }
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: bold;
+    color: #0000009e;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 2rem 1rem;
+  }
+
+  tbody {
+    tr {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.093);
+    }
+
+    td {
+      padding: 1rem;
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+      a {
+        text-decoration: none;
+        background-color: $color2;
+        color: white;
+        padding: 0.4rem 1rem;
+      }
+      button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: rgb(255, 44, 44);
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.order-user-details {
+  @include flex(row, center, flex-start, 1rem);
+
+  width: 100%;
+  padding: 2rem;
+  .order-info-card {
+    width: 50%;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 2rem;
+    @include flex(column, unset, unset, 1rem);
+    position: relative;
+
+    > h2 {
+      @include heading(2px, 400);
+      text-align: center;
+    }
+  }
+  .address-info-card {
+    @include flex(column, flex-start, flex-start, 0.3rem);
+    padding: 2rem;
+    width: 50%;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    > h1 {
+      text-align: center;
+      @include heading(2px, 400);
+      align-self: center;
+      font-size: 1.5rem;
+    }
+    > h5 {
+      padding-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      @include heading(2px, 300);
+    }
+  }
+}
+
+.table-pagination {
+  @include flex;
+  padding: 2rem;
+  > button {
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    background-color: $color4;
+    color: white;
+    &:disabled {
+      background-color: rgba(219, 68, 68, 0.1);
+      cursor: not-allowed;
+    }
+  }
+}
+
+#hamburger {
+  display: grid;
+  place-items: center;
+  @include square(3rem);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: $color2;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 9;
+}
+
+#close-sidebar {
+  margin: 1rem auto;
+  display: block;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $color2;
+  color: white;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  @include flex;
+  > div {
+    @include square(10rem);
+    border-radius: 50%;
+    border-top: 1rem solid rgb(43, 43, 43);
+    border-left: 1rem solid rgb(43, 43, 43);
+    border-right: 1rem solid #fff;
+    border-bottom: 1rem solid #fff;
+    animation: loading-animation 0.5s linear infinite;
+  }
+}
+
+.skeleton-loader {
+  display: flex;
+  flex-direction: column;
+}
+.skeleton-shape {
+  height: 30px;
+  width: 100%;
+  background-color: #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+@keyframes loading-animation {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes up-and-down {
+  to {
+    transform: translate(-50%, -20%);
+  }
+}
+
+@keyframes skeleton-loader {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+
+
+@import "admin-styles/mediaquery";

@@ -1,0 +1,130 @@
+footer {
+  @include flex(row, space-between, flex-start, 1.5rem);
+  height: 100%;
+  flex-wrap: wrap;
+  color: $color1;
+  background-color: $color2;
+  width: 100%;
+  padding: 2rem 5%;
+  position: relative;
+
+  .subscribe {
+    @include flex(column, flex-start, flex-start, 1rem);
+    height: 100%;
+    width: 15rem;
+    max-width: 20rem;
+    .github {
+      @include flex(row, center, center, 0.5rem);
+
+      padding: 0.5rem 1rem;
+      border: 1px solid $color1;
+      border-radius: 0.5rem;
+      > svg {
+        @include square(1.5rem);
+        color: $color1;
+      }
+      &:hover {
+        border: 1px solid $color4;
+        > svg {
+          color: $color4;
+        }
+      }
+    }
+    > h1 {
+      @include heading(2px, 600);
+    }
+    > h2 {
+      @include heading(2px, 500);
+    }
+    > a {
+      color: $color1;
+    }
+
+    .input {
+      @include flex(row, center, center, 0.5rem);
+      border: 1px solid $color1;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+
+      > input {
+        @include inputStyle(100%, 0.5rem);
+        max-width: fit-content;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        gap: 3px;
+        font-size: 1rem;
+        color: white;
+      }
+    }
+    .download-app {
+      display: flex;
+      gap: 0.5rem;
+      .qr {
+        height: 100%;
+        > img {
+          @include square(5rem);
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+      .link {
+        @include flex(column, center, center, 0.5rem);
+        height: 100%;
+      }
+    }
+    .social-icons {
+      @include flex(row, flex-start, center, 2.5rem);
+      > a {
+        > svg {
+          @include square(1.5rem);
+          color: $color1;
+          &:hover {
+            color: $color4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.privacy {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+
+  > h1,
+  > h2,
+  > h4 {
+    @include heading(2px, 600);
+  }
+
+  > p > strong {
+    @include heading(2px, 500);
+  }
+
+  ol > li > a {
+    color: $color4;
+    margin: 0 1rem;
+    &:hover {
+      color: $color2;
+    }
+  }
+}
+
+.scroll-to-top {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  > div {
+    > svg {
+      @include square(2rem);
+      color: $color1;
+      &:hover {
+        color: $color4;
+      }
+    }
+  }
+}

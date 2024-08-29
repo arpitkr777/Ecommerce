@@ -1,0 +1,251 @@
+.home {
+  padding: 2rem 5%;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  .hero-banner {
+    @include flex(row, flex-start, center, 1rem);
+    flex-wrap: wrap-reverse;
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+    }
+
+    .banner {
+      width: 20%;
+      max-width: 15rem;
+
+      @include flex(column, center, flex-start, 1.4rem);
+      > a {
+        color: $color2;
+        letter-spacing: 2px;
+        font-size: 1.2rem;
+
+        &:hover {
+          color: $color4;
+        }
+      }
+    }
+
+    > section {
+      @include flex(column, center, center, 1rem);
+
+      width: 80%;
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
+    > section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .findmore {
+    font-size: 1rem;
+  }
+  > h1 {
+    @include heading(1px);
+    margin-top: 3rem;
+    @include flex(row, space-between, center);
+  }
+
+  > main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  padding: 2rem 5%;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .categoriesB {
+    content: "";
+    width: 100%;
+    height: 30.75rem;
+    margin: 5rem 0;
+    background: url("../assets/categoriesB.png") no-repeat center/ cover;
+  }
+  .new-arrivals-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.2rem;
+    height: 38rem;
+
+    .ps {
+      content: "";
+      width: 100%;
+      background: url("https://res.cloudinary.com/da9skd1ks/image/upload/v1706444003/ecommerce-assets/diogmmw8dimzueoue6o4")
+        no-repeat center/ cover;
+    }
+    .other {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.2rem;
+      width: 100%;
+      .hat {
+        content: "";
+        width: 100%;
+        height: 15rem;
+        background: url("https://res.cloudinary.com/da9skd1ks/image/upload/v1706444003/ecommerce-assets/f2swi3gmfaytw2hqxdcj")
+          no-repeat center/ cover;
+        height: 100%;
+      }
+      .down {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.2rem;
+        height: 15rem;
+        width: 100%;
+        height: 100%;
+        .speaker {
+          content: "";
+          width: 100%;
+
+          background: url("https://res.cloudinary.com/da9skd1ks/image/upload/v1706444003/ecommerce-assets/qwxf2njs21qv9hn88ojr")
+            no-repeat center/ cover;
+        }
+        .perfume {
+          content: "";
+          width: 100%;
+
+          background: url("https://res.cloudinary.com/da9skd1ks/image/upload/v1706444003/ecommerce-assets/mrrrrrzyjqz8leedamgj")
+            no-repeat center/ cover;
+        }
+      }
+    }
+  }
+
+  .categories-box {
+    @include flex(row, space-around, center, 0.2rem);
+    flex-wrap: wrap;
+    width: 100%;
+
+    > a {
+      @include flex(column, center, center, 0.5rem);
+      border: 1px solid $color2;
+      @include square(10rem);
+
+      > svg {
+        @include square(3rem);
+      }
+
+      &:hover {
+        background-color: $color4;
+        color: $color1;
+        border: none;
+      }
+    }
+  }
+
+  .features {
+    width: 100%;
+    margin: auto;
+    @include flex(row, space-around, flex-start, 0.5rem);
+    padding: 6rem 5%;
+
+    .delivery {
+      @include flex(column, center, center, 0.5rem);
+      .feature-icons {
+        background-color: rgb(145, 145, 145);
+        @include square(5rem);
+        @include flex(row, center, center, 0.5rem);
+        border-radius: 50%;
+        padding: 0.3rem;
+        > svg {
+          @include square(4rem);
+          background-color: black;
+          color: $color1;
+          padding: 0.5rem;
+          border-radius: 50%;
+        }
+      }
+      .details {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.product-card {
+  width: 18.75rem;
+  padding: 1rem;
+  flex: none;
+  position: relative;
+  background-color: white;
+  @include flex(column, flex-start, center, 4px);
+
+  .back {
+    @include flex(column, center, flex-start, 0px);
+    .off {
+      @include flex(row, space-between, center, 0.5rem);
+      width: 100%;
+      padding: 1.9rem 2rem 1.9rem 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      > p {
+        background-color: $color4;
+        color: $color1;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      > div {
+        > span {
+          > svg {
+            background-color: $color1;
+            padding: 0.4rem;
+            @include square(2.2rem);
+            border-radius: 40%;
+            color: $color2;
+            &:hover {
+              color: $color4;
+            }
+          }
+        }
+      }
+    }
+    > button {
+      @include btn(0.8rem, $color4, $color1);
+      width: 100%;
+      border-radius: 0 0 0.5rem 0.5rem;
+
+      &:hover {
+        background-color: $color2;
+        color: $color1;
+      }
+    }
+    > img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      background-color: $color1;
+      @include square(calc(17.75rem - 1rem));
+      object-fit: contain;
+    }
+  }
+  span {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: $color4;
+  }
+
+  .rating {
+    @include flex(row, center, center, 0);
+    > svg {
+      @include square(1.5rem);
+      color: #ffad33;
+    }
+  }
+}

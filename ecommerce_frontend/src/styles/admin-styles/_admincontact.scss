@@ -1,0 +1,10 @@
+.admin-contact {
+  @include flex(column, flex-start, flex-start, 0.5rem);
+  padding: 2rem 5%;
+
+  height: 100%;
+  width: 100%;
+  > main {
+    width: 100%;
+  }
+}
